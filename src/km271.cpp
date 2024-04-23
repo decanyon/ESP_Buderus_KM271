@@ -648,6 +648,14 @@ void parseInfo(uint8_t *data, int len) {
     km271Msg(KM_TYP_STATUS, statTopic.BOILER_LIFETIME_3[config.mqtt.lang], uint8ToString(kmStatus.BurnerOperatingDuration_2));
     km271Msg(KM_TYP_STATUS, statTopic.BOILER_LIFETIME_4[config.mqtt.lang], uint64ToString(kmStatus.BurnerOperatingDuration_Sum));
 
+
+       if (config.oilmeter.use_virtual_meter && config.oilmeter.oil_density_kg_l != 0) {
+      kmStatus.BurnerCalcOilConsumptionDaily =
+          (double)kmStatus.BurnerOperatingDuration_2 / 60 * config.oilmeter.consumption_kg_h / config.oilmeter.oil_density_kg_l;
+      km271Msg(KM_TYP_STATUS, statTopic.BOILER_CONSUMPTION_DAILY[config.mqtt.lang], doubleToString(kmStatus.BurnerCalcOilConsumptionDaily));
+    }
+    break;
+    
     if (config.oilmeter.use_virtual_meter && config.oilmeter.oil_density_kg_l != 0) {
       kmStatus.BurnerCalcOilConsumption =
           (double)kmStatus.BurnerOperatingDuration_Sum / 60 * config.oilmeter.consumption_kg_h / config.oilmeter.oil_density_kg_l;

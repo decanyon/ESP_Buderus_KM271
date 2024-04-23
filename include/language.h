@@ -338,6 +338,7 @@ typedef struct {
   const char *BOILER_LIFETIME_3[MAX_LANG] = {"Brenner_Laufzeit_Minuten", "burner_runtime_minutes"};
   const char *BOILER_LIFETIME_4[MAX_LANG] = {"Brenner_Laufzeit_Summe", "burner_runtime_overall"};
   const char *BOILER_CONSUMPTION[MAX_LANG] = {"Oelverbrauch_Gesamt_berechnet", "oil_consumption_overall_calc"};
+  const char *BOILER_CONSUMPTION_DAILY[MAX_LANG] = {"Oelverbrauch_Daily_berechnet", "oil_consumption_daily_calc"};
 
   const char *OUTSIDE_TEMP[MAX_LANG] = {"Aussentemperatur", "outside_temp"};
   const char *OUTSIDE_TEMP_DAMPED[MAX_LANG] = {"Aussentemperatur_gedaempft", "outside_temp_damped"};

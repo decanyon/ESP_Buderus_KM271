@@ -99,6 +99,8 @@ typedef struct {
   uint8_t BurnerOperatingDuration_0;     // 0x8838 : Minutes (*1)
   uint64_t BurnerOperatingDuration_Sum;  // Minutes (sum)
   double BurnerCalcOilConsumption;       // Litre (sum)
+  double BurnerCalcOilConsumptionDaily;       // Litre (sum)
+
   int8_t OutsideTemp;                    // 0x893c : Temperature (1C resolution, possibly negative)
   int8_t OutsideDampedTemp;              // 0x893e : Temperature (1C resolution, possibly negative)
   uint8_t ControllerVersionMain;         // 0x893e : Number
